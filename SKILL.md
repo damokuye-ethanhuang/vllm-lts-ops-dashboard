@@ -1,17 +1,12 @@
 ---
 name: vllm-lts-ops-dashboard
 description: "Build and analyze Grafana dashboards over vLLM LTS logs."
-version: 0.2.1
-author: Hermes Agent
+version: 0.2.2
+author: Ethan
 license: MIT
 platforms: [linux]
-metadata:
-  hermes:
-    editorial_name: vLLM LTS Ops Dashboard
-    editorial_description: Build Grafana dashboards over Huawei Cloud LTS logs for vLLM/ModelArts engine O&M. LTS query semantics, per-engine metric aggregation rules, dashboard build/edit workflows, PNG capture of collapsed-row dashboards, and preemption/TPOT incident analysis from metric-line signatures.
-    tags: [grafana, lts, vllm, modelarts, observability, huawei-cloud]
-    related_skills: [grafana-dashboards]
-    requires_tools: [terminal, read_file, write_file, patch]
+tags: [grafana, lts, vllm, modelarts, observability, huawei-cloud]
+related_skills: [grafana-dashboards]
 ---
 
 # vLLM LTS Ops Dashboard (Grafana × Huawei LTS)
