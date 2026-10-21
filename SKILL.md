@@ -1,8 +1,8 @@
 ---
 name: vllm-lts-ops-dashboard
 description: "Build and analyze Grafana dashboards over vLLM LTS logs."
-version: 0.2.2
-author: Ethan
+version: 0.2.3
+author: damokuye-ethanhuang
 license: MIT
 platforms: [linux]
 tags: [grafana, lts, vllm, modelarts, observability, huawei-cloud]
