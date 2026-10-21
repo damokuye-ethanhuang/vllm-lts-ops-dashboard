@@ -1,14 +1,14 @@
 ---
 name: vllm-lts-ops-dashboard
 description: "Build and analyze Grafana dashboards over vLLM LTS logs."
-version: 0.2.0
+version: 0.2.1
 author: Hermes Agent
 license: MIT
 platforms: [linux]
 metadata:
   hermes:
     editorial_name: vLLM LTS Ops Dashboard
-    editorial_description: Build Grafana dashboards over Huawei Cloud LTS logs for vLLM/ModelArts engine O&M. LTS query semantics, per-engine calibers, dashboard build/edit workflows, capture of collapsed-row dashboards, and preemption/TPOT incident analysis from metric-line signatures.
+    editorial_description: Build Grafana dashboards over Huawei Cloud LTS logs for vLLM/ModelArts engine O&M. LTS query semantics, per-engine metric aggregation rules, dashboard build/edit workflows, PNG capture of collapsed-row dashboards, and preemption/TPOT incident analysis from metric-line signatures.
     tags: [grafana, lts, vllm, modelarts, observability, huawei-cloud]
     related_skills: [grafana-dashboards]
     requires_tools: [terminal, read_file, write_file, patch]
@@ -20,7 +20,7 @@ End-to-end workflow for building, editing, capturing, and incident-analyzing Gra
 
 ## Output Locale / 输出语言
 
-This skill produces dashboards and incident triage conclusions for a human audience. Written reasoning adapts to the caller's language; SQL, LTS field names, API paths, and file names always stay English-only, and technical terms (TPOT, kv_cache, prompt_throughput, PD-split, RECOMPUTE) are never translated. 本技能产出看板与事故排查结论。文字性推理适配调用者语言；SQL、LTS 字段名、API 路径、文件名保持纯英文；技术术语（TPOT、kv_cache、prompt_throughput、PD-split、RECOMPUTE）永不翻译。Frontmatter + body remain English-primary as an internal engineering skill; the bilingual guarantee lives in `README.md` + `README_zh.md`. frontmatter 与正文保持英文主序（内部工程技能）；双语由 README.md 与 README_zh.md 提供。
+This skill produces dashboards and incident-triage conclusions for a human reader. Written reasoning follows the caller's language; SQL, LTS field names, API paths, and file names stay English-only, and technical terms (TPOT, kv_cache, prompt_throughput, PD-split, RECOMPUTE) are never translated. Frontmatter and body stay English-primary as an internal engineering skill; the bilingual pair lives in `README.md` + `README_zh.md`.
 
 ## When to Use
 - Building/editing dashboards over an LTS datasource (`hw-hws-lts-grafana-datasource-plugin`), appName/podName-style structured labels.
@@ -70,7 +70,7 @@ select sum(v) as "<series>" from (
 - Chrome refuses a debug port on the DEFAULT user-data-dir; a capture Chrome needs its OWN profile dir, else a second launch just forwards the URL to the existing session and exits.
 - Active-tab full-page shot: `/json/list` → match focused-window title (xdotool) or take the only/last http tab → WebSocket CDP → wait network-quiet + no spinner (≤60 s, respects rate limits) → `Page.captureScreenshot {captureBeyondViewport: true, fromSurface: true}`.
 - UX: a GLOBAL HOTKEY + desktop notification beats in-page buttons ("can't find the button").
-- If the user already has their own screenshot tool — STOP BUILDING, prefer theirs, tear down everything (hotkey, icons, scripts, extra profiles, test outputs) and verify the teardown.
+- If the user already has their own screenshot tool — stop building one, prefer theirs, and tear down everything you added (hotkey, icons, scripts, extra profiles, test outputs); verify the teardown.
 
 ## Verification
 - [ ] Rewritten LTS query matches independent per-engine computation (~1%).
