@@ -1,5 +1,5 @@
 ---
-name: vllm-lts-ops-dashboard
+name: vllm-om-dashboard-dev
 description: "Build and analyze Grafana dashboards over vLLM LTS logs."
 version: 0.2.3
 author: damokuye-ethanhuang

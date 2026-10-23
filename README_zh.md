@@ -1,4 +1,4 @@
-# vLLM LTS 运维看板
+# vLLM O&M Dashboard Dev / vLLM 运维看板开发
 
 基于华为云 LTS（vLLM/ModelArts 引擎日志）数据源的 Grafana 看板端到端工作流：构建、编辑、截图与事故分析。English version: [README.md](README.md)。
 

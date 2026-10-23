@@ -1,4 +1,4 @@
-# vLLM LTS Ops Dashboard
+# vLLM O&M Dashboard Dev / vLLM 运维看板开发
 
 End-to-end workflow for building, editing, screenshotting, and incident-analyzing Grafana dashboards whose datasource is Huawei Cloud LTS over vLLM/ModelArts engine logs. Chinese version: [README_zh.md](README_zh.md).
 
